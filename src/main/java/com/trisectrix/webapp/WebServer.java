@@ -11,7 +11,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 
 /**
- * Created on 6/27/15.
  *
  * @author Sriharsha Gangam
  */

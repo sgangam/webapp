@@ -1,10 +1,9 @@
 package com.trisectrix.webapp;
 
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created on 6/27/15.
  *
  * @author Sriharsha Gangam
  */

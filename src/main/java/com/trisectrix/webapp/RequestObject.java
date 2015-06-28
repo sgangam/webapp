@@ -3,7 +3,6 @@ package com.trisectrix.webapp;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created on 6/27/15.
  *
  * @author Sriharsha Gangam
  */

@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+      <jackson.version>2.5.3</jackson.version>
       <jettyVersion>7.1.6.v20100715</jettyVersion>
   </properties>
 
@@ -32,18 +33,46 @@
         <version>${jettyVersion}</version>
   </dependency>
 
-  <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-      <version>1.8.5</version>
-  </dependency>
 
   <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.5.3</version>
+      <version>${jackson.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
   </dependency>
 
   </dependencies>
+   
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <version>${jettyVersion}</version>
+          </plugin>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.1</version>
+              <executions>
+                  <execution><goals><goal>java</goal></goals></execution>
+              </executions>
+              <configuration>
+                  <mainClass>com.trisectrix.webapp.WebServer</mainClass>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+
+
 
 </project>
