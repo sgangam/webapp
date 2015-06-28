@@ -1,4 +1,4 @@
-package com.trisectrix.webapp;
+package com.trisectrix.webapp.reversal;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
