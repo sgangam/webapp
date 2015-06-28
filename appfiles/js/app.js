@@ -1,32 +1,31 @@
-$(function() {
+    var wordReversalForm = function() {
 
-    var form = $('#ajaxform');
-    var formMessages = $('#results');
-    $(form).submit(function(eve) {
+        var form = $('#ajaxform');
+        var responseTag = $('#results');
+        var doneFunc = function(response) {
+                    $(responseTag).removeClass('error');
+                    $(responseTag).addClass('success');
+                    $(responseTag).text(response);
+        }
+        var failFunc = function(data) {
+            $(responseTag).removeClass('success');
+            $(responseTag).addClass('error');
 
-        eve.preventDefault();
-        var formData = $(form).serialize();
+            if (data.responseText !== '') {
+                    $(responseTag).text(data.responseText);
+            } else {
+                    $(responseTag).text('An error occured and the message could not be sent.');
+            }
+        }
+        eventFunc(form, responseTag, doneFunc, failFunc);
 
-        $.ajax({
-                type: 'GET',
-                url: $(form).attr('action'),
-                data: formData
-        })
-        .done(function(response) {
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
-                $(formMessages).text(response);
-        })
-        .fail(function(data) {
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
+    }
 
-                if (data.responseText !== '') {
-                        $(formMessages).text(data.responseText);
-                } else {
-                        $(formMessages).text('An error occured and the message could not be sent.');
-                }
-        });
-    });
-});
+    var ajaxFunction = function() {
+        wordReversalForm();
+    }
+
+
+
+$(ajaxFunction);
 
