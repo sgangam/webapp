@@ -9,8 +9,8 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-      <jackson.version>2.12.4</jackson.version>
-      <jettyVersion>8.1.16.v20140903</jettyVersion>
+      <jackson.version>2.18.9</jackson.version>
+      <jettyVersion>9.4.51.v20230217</jettyVersion>
   </properties>
 
   <dependencies>
